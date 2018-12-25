@@ -3,7 +3,6 @@
   <div class="col-lg-3">
     <input type="text" [(ngModel)]="FilteredBy"  class="form-control"  id="proprio" aria-describedby="helpId" placeholder="">
   </div>
-  {{FilteredBy}}
   </div>
 
 <div class="card col-lg-8 offset-lg-2">
@@ -20,10 +19,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of comptes">
-          <td [style.color]="couleur">{{item.numero}}</td>
+        <tr *ngFor="let item of comptes | comptesFilter : FilteredBy">
+          <td >{{item.numero}}</td>
           <td>{{item.proprietaire}}</td>
-          <td>{{item.solde}}</td>
+          <td>{{item.solde | currency:'EUR': 'symbol': '1.2-2'}}</td>
         </tr>
 
       </tbody>

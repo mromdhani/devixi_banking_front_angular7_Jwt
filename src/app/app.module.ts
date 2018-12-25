@@ -10,13 +10,16 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ComptesListComponent } from './components/comptes-list/comptes-list.component';
+import { ComptesFilterPipe } from './shared/pipes/comptes-filter.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    ComptesListComponent
+    ComptesListComponent,
+    ComptesFilterPipe
   ],
   imports: [
     BrowserModule,

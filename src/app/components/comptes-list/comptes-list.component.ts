@@ -18,5 +18,7 @@ export class ComptesListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('=============== Ici Hook Init de ComptesListComponent ==================');
+  }
 }
