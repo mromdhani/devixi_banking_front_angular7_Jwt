@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of comptes | comptesFilter : FilteredBy">
+        <tr *ngFor="let item of comptes | comptesFilter : FilteredBy ">
           <td >{{item.numero}}</td>
           <td>{{item.proprietaire}}</td>
           <td>{{item.solde | currency:'EUR': 'symbol': '1.2-2'}}</td>

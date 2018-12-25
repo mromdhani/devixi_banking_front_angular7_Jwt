@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {HttpClientModule} from '@angular/common/http';
+
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {FormsModule} from '@angular/forms';
@@ -11,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ComptesListComponent } from './components/comptes-list/comptes-list.component';
 import { ComptesFilterPipe } from './shared/pipes/comptes-filter.pipe';
+import { ComptesService } from './sevices/comptes.service';
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { ComptesFilterPipe } from './shared/pipes/comptes-filter.pipe';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
