@@ -1,3 +1,11 @@
+<div class="form-group row">
+  <label for="proprio" class="offset-lg-2 col-lg-1">Filtrer par </label>
+  <div class="col-lg-3">
+    <input type="text" [(ngModel)]="FilteredBy"  class="form-control"  id="proprio" aria-describedby="helpId" placeholder="">
+  </div>
+  {{FilteredBy}}
+  </div>
+
 <div class="card col-lg-8 offset-lg-2">
   <div class="card-header bg-info text-white">
     <h4>Liste de tous les comptes</h4>
@@ -13,7 +21,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of comptes">
-          <td>{{item.numero}}</td>
+          <td [style.color]="couleur">{{item.numero}}</td>
           <td>{{item.proprietaire}}</td>
           <td>{{item.solde}}</td>
         </tr>
