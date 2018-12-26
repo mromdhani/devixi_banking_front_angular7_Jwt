@@ -18,5 +18,8 @@ export class ComptesService {
   }
   getCompteById(id: string): Observable<ICompte> {
     return this._http.get<ICompte>(this.URL + '/' + id);
-}
+  }
+  addCompte(c: ICompte): Observable<any> {
+    return this._http.post<any>(this.URL, c);
+  }
 }
