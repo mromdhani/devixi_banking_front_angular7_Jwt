@@ -1,10 +1,10 @@
 <div class="card offset-lg-2 col-lg-8">
   <div class="card-header bg-info text-white">
-   <h4>Ouverture d'un nouveau compte</h4>
+   <h4>Ouverture d'un nouveau compte / Reactive Forms</h4>
   </div>
   <div class="card-body">
   <div class="container">
-    <form  #form="ngForm" (submit)="ouvrirCompte()">
+    <form [formGroup]="form" (ngSubmit)="ouvrirCompte(form.value)" novalidate>
       <div class="form-group row">
         <label for="numero" class="col-lg-3 col-form-label">Numéro du compte</label>
         <div class="col-lg-4">
@@ -12,12 +12,11 @@
                 class="form-control"
                 name="numero" id="numero"
                 placeholder=""
-                [(ngModel)] = "compte.numero"
-                required
-                #num = "ngModel">
+                formControlName="numero"
+                >
         </div>
-        <div class="col-lg-5 text text-danger" *ngIf="num.touched && num.invalid">
-           <div *ngIf= "num?.errors.required">Le numéro est obligatoire</div>
+        <div class="col-lg-5 text text-danger" *ngIf="form.controls['numero'].touched && form.controls['numero'].invalid">
+           <div *ngIf= "form.controls['numero'].errors.required">Le numéro est obligatoire</div>
         </div>
       </div>
       <div class="form-group row">
@@ -27,28 +26,27 @@
                  class="form-control"
                  name="proprio" id="proprio"
                  placeholder=""
-                 [(ngModel)] = "compte.proprietaire"
-                 required
-                 #prop = "ngModel">
+                formControlName="proprietaire"
+                 >
         </div>
-        <div class="col-lg-5 text text-danger" *ngIf="prop.touched && prop.invalid">
-            <div *ngIf= "prop?.errors.required">Le proprio est obligatoire</div>
+        <div class="col-lg-5 text text-danger" *ngIf="form.controls['proprietaire'].touched && form.controls['proprietaire'].invalid">
+            <div *ngIf= "form.controls['proprietaire'].errors.required">Le proprio est obligatoire</div>
          </div>
       </div>
 
       <div class="form-group row">
         <label for="solde" class="col-lg-3 col-form-label">Solde initial</label>
         <div class="col-lg-4">
-          <input type="number"
+          <input type="text"
                   class="form-control"
                   name="solde" id="solde"
                   placeholder=""
-                  [(ngModel)] = "compte.solde"
-                  required
-                  #solde="ngModel">
+                  formControlName="solde"
+                  >
         </div>
-        <div class="col-lg-5 text text-danger" *ngIf="solde.touched && solde.invalid">
-            <div *ngIf= "solde?.errors.required">Le solde est obligatoire</div>
+        <div class="col-lg-5 text text-danger" *ngIf="form.controls['solde'].touched && form.controls['solde'].invalid">
+            <div *ngIf= "form.controls['solde'].errors.required">Le solde est obligatoire</div>
+          <div *ngIf= "form.controls['solde'].errors.pattern">Le solde doit être numérique</div>
          </div>
       </div>
 
