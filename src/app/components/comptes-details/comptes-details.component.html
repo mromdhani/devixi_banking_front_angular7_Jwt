@@ -1,0 +1,26 @@
+<div class="card offset-lg-2 col-lg-8">
+  <div class="card-header bg-info text-white">
+   <h4>Détails du compte numéro {{numero}}</h4>
+  </div>
+  <div class="card-body">
+   <table class="table table-bordered table-striped">
+     <tbody>
+       <tr>
+         <td>Numéro</td>
+         <td>{{compte?.numero}}</td>
+       </tr>
+       <tr>
+        <td>Propriétaire</td>
+        <td>{{compte?.proprietaire}}</td>
+      </tr>
+      <tr>
+        <td>Solde</td>
+        <td>{{compte?.solde}}</td>
+      </tr>
+     </tbody>
+   </table>
+  </div>
+  <a [routerLink]="['/detail', 'C5000']"
+  routerLinkActive="router-link-active">Previous</a> <br>
+  <a  [routerLink]="['/detail', 'C2000']"  routerLinkActive="router-link-active">Next</a>
+</div>

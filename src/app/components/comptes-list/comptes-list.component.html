@@ -21,7 +21,8 @@
       <tbody>
         <tr *ngFor="let item of comptes | comptesFilter : FilteredBy ">
           <td >{{item.numero}}</td>
-          <td>{{item.proprietaire}}</td>
+          <td><a [routerLink]="['/detail', item.numero]"
+          routerLinkActive="router-link-active">{{item.proprietaire}}</a></td>
           <td>{{item.solde | currency:'EUR': 'symbol': '1.2-2'}}</td>
         </tr>
 

@@ -14,6 +14,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ComptesListComponent } from './components/comptes-list/comptes-list.component';
 import { ComptesFilterPipe } from './shared/pipes/comptes-filter.pipe';
 import { ComptesService } from './sevices/comptes.service';
+import { RouterModule } from '@angular/router';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ComptesDetailsComponent } from './components/comptes-details/comptes-details.component';
 
 
 @NgModule({
@@ -22,14 +26,17 @@ import { ComptesService } from './sevices/comptes.service';
     NavbarComponent,
     FooterComponent,
     ComptesListComponent,
-    ComptesFilterPipe
+    ComptesFilterPipe,
+    WelcomeComponent,
+    NotFoundComponent,
+    ComptesDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
