@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ComptesDetailsComponent } from './components/comptes-details/comptes-details.component';
+import { ComptesAddComponent } from './components/comptes-add/comptes-add.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ComptesDetailsComponent } from './components/comptes-details/comptes-de
     ComptesFilterPipe,
     WelcomeComponent,
     NotFoundComponent,
-    ComptesDetailsComponent
+    ComptesDetailsComponent,
+    ComptesAddComponent
   ],
   imports: [
     BrowserModule,
