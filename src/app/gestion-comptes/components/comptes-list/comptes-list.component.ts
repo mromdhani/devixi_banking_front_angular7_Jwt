@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ICompte } from 'src/app/domain/icompte';
-import { ComptesService } from 'src/app/sevices/comptes.service';
+
 import { Observable } from 'rxjs';
+import { ICompte } from '../../domain/icompte';
+import { ComptesService } from '../../sevices/comptes.service';
 
 @Component({
   selector: 'app-comptes-list',

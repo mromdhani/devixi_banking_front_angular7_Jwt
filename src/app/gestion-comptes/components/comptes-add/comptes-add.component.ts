@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ICompte } from 'src/app/domain/icompte';
+
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { ComptesService } from 'src/app/sevices/comptes.service';
+
 import { Router } from '@angular/router';
 import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
+import { ICompte } from '../../domain/icompte';
+import { ComptesService } from '../../sevices/comptes.service';
 
 @Component({
   selector: 'app-comptes-add',
