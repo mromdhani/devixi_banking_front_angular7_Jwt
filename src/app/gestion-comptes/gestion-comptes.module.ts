@@ -24,21 +24,21 @@ import { GestionComptesRoutingModule } from './gestion-comptes-routing.module';
     ComptesDetailsComponent,
     ComptesAddComponent
   ],
-  exports : [
-    NavbarComponent,   // N exporter que navbar et footer
-    FooterComponent  //,
-    // GestionComptesRoutingModule
-
-    ,
-    ComptesListComponent,
-    ComptesFilterPipe
-  ],
   imports: [
     CommonModule,
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
     GestionComptesRoutingModule
+  ],
+  exports : [
+    NavbarComponent,   // N exporter que navbar et footer
+    FooterComponent,
+    ComptesListComponent,
+    ComptesFilterPipe,
+    NotFoundComponent
+     // GestionComptesRoutingModule
   ]
+
 })
 export class GestionComptesModule { }

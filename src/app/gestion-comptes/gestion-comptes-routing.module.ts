@@ -6,12 +6,13 @@ import { ComptesDetailsComponent } from './components/comptes-details/comptes-de
 import { CompteDetailsGuard } from './shared/guards/compte-details.guard';
 import { ComptesAddComponent } from './components/comptes-add/comptes-add.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AuthGuard } from '../authentication/guards/auth.gaurd';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent},
-  { path: 'list', component: ComptesListComponent},
+  { path: 'list', component: ComptesListComponent, canActivate: [AuthGuard]},
   { path: 'detail/:id', component: ComptesDetailsComponent, canActivate: [ CompteDetailsGuard]},
-  { path: 'add', component: ComptesAddComponent},
+  { path: 'add', component: ComptesAddComponent, canActivate: [AuthGuard]},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', component: NotFoundComponent}
 ];

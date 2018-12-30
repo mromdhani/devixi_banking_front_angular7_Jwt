@@ -8,6 +8,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GestionComptesModule } from './gestion-comptes/gestion-comptes.module';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { AuthenticationRoutingModule } from './authentication/authentication-routing.module';
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { GestionComptesModule } from './gestion-comptes/gestion-comptes.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GestionComptesModule
+    AuthenticationModule,
+    GestionComptesModule  // Mis à la fin car il contient la règle **
   ],
   providers: [],
   bootstrap: [AppComponent]
